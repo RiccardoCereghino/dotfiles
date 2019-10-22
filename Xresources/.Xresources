@@ -14,50 +14,52 @@ XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
-*background:                      #222D31
-*foreground:                      #d8d8d8
 *fading:                          8
 *fadeColor:                       black
-*cursorColor:                     #1ABB9B
 *pointerColorBackground:          #2B2C2B
 *pointerColorForeground:          #16A085
 
-!! black dark/light
-*color0:                          #222D31
-*color8:                          #585858
+! special
+*.background:   #0F1011
+*.cursorColor:  #d9c3af
+*.foreground:   #a39e9b
 
-!! red dark/light
-*color1:                          #ab4642
-*color9:                          #ab4642
+! black
+*.color0:       #2f1e2e
+*.color8:       #776e71
 
-!! green dark/light
-*color2:                          #7E807E
-*color10:                         #8D8F8D
+! red
+*.color1:       #ef6155
+*.color9:       #ef6155
 
-!! yellow dark/light
-*color3:                          #f7ca88
-*color11:                         #f7ca88
+! green
+*.color2:       #48b685
+*.color10:      #48b685
 
-!! blue dark/light
-*color4:                          #7cafc2
-*color12:                         #7cafc2
+! yellow
+*.color3:       #fec418
+*.color11:      #fec418
 
-!! magenta dark/light
-*color5:                          #ba8baf
-*color13:                         #ba8baf
+! blue
+*.color4:       #06b6ef
+*.color12:      #06b6ef
 
-!! cyan dark/light
-*color6:                          #1ABB9B
-*color14:                         #1ABB9B
+! magenta
+*.color5:       #815ba4
+*.color13:      #815ba4
 
-!! white dark/light
-*color7:                          #d8d8d8
-*color15:                         #f8f8f8
+! cyan
+*.color6:       #5bc4bf
+*.color14:      #5bc4bf
+
+! white
+*.color7:       #a39e9b
+*.color15:      #e7e9db
 
 Xcursor.theme: xcursor-breeze
 Xcursor.size:                     0
 
-URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
+URxvt.font:                       xft:Inconsolata:size=12
 
 ! alternative font settings with 'terminus':
 ! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
@@ -65,7 +67,7 @@ URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [100]#222D31
+URxvt.background:                 [100]#0F1011
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
