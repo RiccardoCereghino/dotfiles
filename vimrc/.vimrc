@@ -1,20 +1,24 @@
+set encoding=utf-8
+set clipboard=unnamed
 call plug#begin('~/.vim/plugged') " Specify a directory for plugins
-
 " Plugins {{{
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
 Plug 'sjl/badwolf'
 Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-dispatch'
+Plug 'metakirby5/codi.vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 " }}}
 " Colors {{{
 colorscheme badwolf " Colorscheme
-syntax enable       " Syntax processing
+syntax enable
 " }}}
 " Badwolf config{{{
 let g:badwolf_darkgutter = 1          " Make the gutters darker than the background
@@ -28,8 +32,6 @@ set softtabstop=2 " Number of spaces in tab when editing
 set expandtab     " Tabs are spaces
 set shiftwidth=2
 set modelines=1
-filetype indent on
-filetype plugin on
 set autoindent
 " }}}
 " UI Config {{{
@@ -37,14 +39,13 @@ set number         " Show line numbers
 set showcmd        " POWERLINE: Show command in bottom bar
 set cursorline     " Higlight current line
 filetype indent on " Load fyletipe-specific indent files
-set wildmenu       " Visual autocomplete for command menu
+filetype plugin on
 set lazyredraw     " Redraw only when we need to
 set showmatch      " Highlight matching [{()]}
 set colorcolumn=80
-
 " }}}
 " Searching {{{
-set incsearch " Search as characters are entered
+set incsearch
 set hlsearch  " Highlight matches
 " }}}
 " Search  Mappings {{{
@@ -98,10 +99,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 map <F3> :call UltiSnips#RefreshSnippets()<CR>
 " }}}
 " YCM {{{
-  if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-  endif
-  au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+  "if !exists('g:ycm_semantic_triggers')
+   " let g:ycm_semantic_triggers = {}
+  "endif
+  "au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 " }}}
 " SuperTab {{{
 " make YCM compatible with UltiSnips (using supertab)
@@ -120,3 +121,4 @@ inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" 
 nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 " }}}
 " vim:foldmethod=marker:foldlevel=0
+
