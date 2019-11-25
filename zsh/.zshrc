@@ -81,7 +81,7 @@ kitty + complete setup zsh | source /dev/stdin
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git chucknorris vi-mode zsh-autosuggestions)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,4 +126,6 @@ PERL_LOCAL_LIB_ROOT="/home/rick/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_RO
 PERL_MB_OPT="--install_base \"/home/rick/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/rick/perl5"; export PERL_MM_OPT;
 
-fortune -c | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
+# fortune -c | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -2,7 +2,7 @@ set encoding=utf-8
 
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugged')
-Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
@@ -10,19 +10,25 @@ Plug 'tpope/vim-dispatch'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'idanarye/vim-vebugger'
+Plug 'lervag/vimtex'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 " }}}
 " Colors {{{
-colorscheme badwolf " Colorscheme
+colorscheme gruvbox " Colorscheme
+set background=dark
+let g:gruvbox_contrast_dark="hard"
 syntax enable       " Syntax processing
 " }}}
 " Badwolf config{{{
-let g:badwolf_darkgutter = 1          " Make the gutters darker than the background
-let g:badwolf_tabline = 0             " Make the tab line darker than the background
-let g:badwolf_html_link_underline = 1 " Turn on HTML link underlining
-let g:badwolf_css_props_highlight = 1 " Turn on CSS properties highlighting
+" let g:badwolf_darkgutter = 1          " Make the gutters darker than the background
+" let g:badwolf_tabline = 0             " Make the tab line darker than the background
+" let g:badwolf_html_link_underline = 1 " Turn on HTML link underlining
+" let g:badwolf_css_props_highlight = 1 " Turn on CSS properties highlighting
 " }}}
 " Spaces and tabs {{{
 set tabstop=2     " Number of visual spaces for tab
@@ -208,4 +214,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 map <F3> :call UltiSnips#RefreshSnippets()<CR>
+" }}}
+" vimtex {{{
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+map <F4> :VimtexTocToggle<CR>
+map <F5> :VimtexErrors<CR>
 " }}}
